@@ -1,0 +1,161 @@
+@use 'variables';
+
+#app {
+    width: 20%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 1fr;
+    gap: variables.$spacing-md;
+    place-content: start;
+}
+
+#calculator {
+    border: 2px solid var(--border-color-gray);
+    width: 100%;
+    height: 100%;
+    border-radius: variables.$border-radius-lg;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+#theme-toggle {
+    font-size: variables.$font-size-md;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: variables.$border-radius-md;
+    background-color: var(--background-color-reverse);
+    transition: background-color 0.3 linear;
+}
+
+#points {
+    width: 100%;
+    height: 7%;
+    padding: variables.$spacing-sm variables.$spacing-md;
+    background-color: var(--main-field-color);
+
+    &__container {
+        height: 100%;
+        width: 30%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 100%;
+        gap: variables.$spacing-sm;
+    }
+}
+
+.point {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: variables.$border-radius-circle;
+
+    &--red {
+        background-color: var(--point-color-red);
+    }
+
+    &--orange {
+        background-color: var(--point-color-orange);
+    }
+
+    &--green {
+        background-color: var(--point-color-green);
+    }
+}
+
+#main-field {
+    width: 100%;
+    height: 15%;
+    background-color: var(--main-field-color);
+    padding: variables.$spacing-sm variables.$spacing-md;
+    color: var(--font-color);
+    font-size: variables.$font-size-xl;
+    font-weight: variables.$font-weight-lg;
+    text-align: right;
+}
+
+#buttons {
+    width: 100%;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+    place-content: center;
+    background-color: var(--main-field-color);
+    gap: variables.$spacing-xs;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: variables.$font-size-ml;
+    color: var(--font-color);
+    font-weight: variables.$font-weight-md;
+
+    &__zero {
+        grid-column: span 2;
+    }
+
+    &--dark-gray {
+        background-color: var(--button-color-dark-gray);
+    }
+
+    &--light-gray {
+        background-color: var(--button-color-light-gray);
+    }
+
+    &--orange {
+        background-color: var(--button-color-orange);
+    }
+}
+
+@media (max-width: 1024px) {
+    #app {
+        width: 65%;
+        height: 80%;
+        grid-template-columns: 10% 90%;
+        gap: variables.$spacing-sm;
+    }
+
+    #theme-toggle {
+        font-size: variables.$font-size-lg;
+    }
+
+    #points {
+        height: 5%;
+        padding: variables.$spacing-md variables.$spacing-md;
+    }
+    .button {
+        font-size: variables.$font-size-xl;
+    }
+}
+
+@media (max-width: 768px) {
+    #app {
+        width: 90%;
+        height: 70%;
+        grid-template-columns: 10% 90%;
+        gap: variables.$spacing-sm;
+    }
+}
+
+@media (max-width: 468px) {
+    #points {
+        height: 7%;
+    }
+
+    #theme-toggle {
+        font-size: variables.$font-size-md;
+    }
+
+    .button {
+        font-size: variables.$font-size-lg;
+    }
+}
