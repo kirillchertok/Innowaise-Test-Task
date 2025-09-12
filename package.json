@@ -7,6 +7,7 @@
         "build": "webpack --mode production",
         "lint": "eslint . --ext .js"
     },
+    "type": "module",
     "author": "Kirill Chertok",
     "license": "ISC",
     "description": "Innowaise test task for trainee position",
@@ -29,3 +30,4 @@
         "webpack-dev-server": "^5.2.2"
     }
 }
+
