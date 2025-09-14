@@ -76,7 +76,7 @@ npm run build
 
 ```
 .
-├─ .github/                # GitHub Actions (CI) (если есть)
+├─ .github/                # GitHub Actions (CI)
 ├─ .husky/                 # git hooks (pre-commit и т.п.)
 ├─ src/                    # исходный код приложения
 │  ├─ js/                  # файлы JS с логикой и инициализацией
