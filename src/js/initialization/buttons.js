@@ -1,4 +1,4 @@
-import { handleBtn } from '../calculations.js';
+import Calculations from '../calculations.js';
 
 const keys = [
     'AC',
@@ -18,12 +18,13 @@ const keys = [
     '3',
     '+',
     '0',
-    ',',
+    '.',
     '=',
 ];
 
 export const buttons = () => {
     const container = document.getElementById('buttons');
+    const calc = new Calculations();
 
     keys.forEach((key, index) => {
         const btn = document.createElement('button');
@@ -40,7 +41,7 @@ export const buttons = () => {
         }
         btn.textContent = key;
 
-        btn.addEventListener('click', () => handleBtn(key));
+        btn.addEventListener('click', () => calc.handleClick(key));
 
         container.appendChild(btn);
     });
